@@ -28,7 +28,7 @@ const Header: React.FC<Props> = ({ active, locale, title, subtitle, hideHero }) 
                     <Link href="/" aria-label="Back to Gesmax by Bogital homepage" className="flex items-center p-2">
                         <div className="flex items-center cursor-pointer z-50 md:px-16">
                             <div className="h-16 w-auto relative">
-                                <img src="/images/logo-lg.png" alt="" className="object-contain h-16 sm:h-16 lg:h-16 xl:h-16 2xl:h-16" />
+                                <img src="/images/logo-lg.png" alt="Gesmax by Bogital Logo" className="object-contain h-16 sm:h-16 lg:h-16 xl:h-16 2xl:h-16" />
                             </div>
                         </div>
                     </Link>
