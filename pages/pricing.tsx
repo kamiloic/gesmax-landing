@@ -30,7 +30,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
   return (
     <Layout locale={locale as string} title={title} desc={desc}>
       <Header locale={locale as string} title="Pricing" subtitle={subtitle} active='pricing' />
-      <section className="py-20 dark:bg-gray-800 text-gray-100">
+      <section className="py-20 bg-black text-gray-100">
         <div className="container px-4 mx-auto">
           {/* <div className="max-w-2xl mx-auto mb-16 text-center">
             <span className="font-bold tracking-wider uppercase text-primary">Pricing</span>
@@ -38,7 +38,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
           </div> */}
           <div className="flex flex-wrap items-stretch -mx-4">
             <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-gray-900">
+              <div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Monthly</h4>
                   <span className="text-4xl font-bold">15 000 FCFA
@@ -57,7 +57,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                     <span>24/24 7/7 support</span>
                   </li>
                 </ul>
-                <button type="button" className="inline-block px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</button>
+                <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
               </div>
             </div>
             <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
@@ -87,11 +87,11 @@ const Pricing: NextPage<Props> = ({ data }) => {
                     <span>Aenean et lectus blandit</span>
                   </li> */}
                 </ul>
-                <a rel="noopener noreferrer" href="#" className="inline-block w-full px-5 py-3 font-bold tracking-wider text-center rounded dark:bg-gray-800 text-primary">Get Started</a>
+                <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-bold tracking-wider text-center rounded bg-gray-800 text-primary">Get Started</a>
               </div>
             </div>
             <div className="w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="p-6 space-y-6 rounded shadow sm:p-8 dark:bg-gray-900">
+              <div className="p-6 space-y-6 rounded shadow sm:p-8 bg-gray-900">
                 <div className="space-y-2">
                   <h4 className="text-2xl font-bold">Annual</h4>
                   <span className="text-4xl font-bold">100 000 FCFA
@@ -109,7 +109,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                     <span>24/24 7/7 support</span>
                   </li>
                 </ul>
-                <a rel="noopener noreferrer" href="#" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
+                <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
               </div>
             </div>
           </div>
