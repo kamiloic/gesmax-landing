@@ -63,15 +63,15 @@ const features = [
     },
     {
         title: "Team management and assessment",
-        desc: "Gesmax helps you manage your teams' and assess their performances"
+        desc: "Gesmax helps you manage your teams and assess their performances"
     },
     {
         title: "Real-time syncs",
-        desc: "Gesmax automatically sync your business information to all authorized devices in real-time"
+        desc: "Gesmax automatically syncs your business information to all authorized devices in real-time"
     },
     {
         title: "Disaster recovery",
-        desc: "You can always recover your all your information if any hazard like device malfunctioning, fire hazards, or theft occurs."
+        desc: "You can always recover all your information if any hazard like device malfunctioning, fire hazards, or theft occurs."
     },
     {
         title: "Offline first",
