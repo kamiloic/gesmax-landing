@@ -46,7 +46,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                   </span>
                   {/* <span className="text-6xl font-bold">Free</span> */}
                 </div>
-                <p className="mt-3 leading-relaxed text-gray-400">Etiam ac convallis enim, eget euismod dolor.</p>
+                {/* <p className="mt-3 leading-relaxed text-gray-400">Etiam ac convallis enim, eget euismod dolor.</p> */}
                 <ul className="flex-1 mb-6 text-gray-400">
                   <li className="flex items-center space-x-2">
                     <SVGTickGray />
@@ -68,7 +68,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                     <span className="text-sm tracking-wide">/6 months</span>
                   </span>
                 </div>
-                <p className="leading-relaxed">Morbi cursus ut sapien sit amet consectetur.</p>
+                {/* <p className="leading-relaxed">Morbi cursus ut sapien sit amet consectetur.</p> */}
                 <ul className="flex-1 space-y-2">
                   <li className="flex items-center space-x-2">
                     <SVGTickGray />
@@ -98,7 +98,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                     <span className="text-sm tracking-wide">/12 months</span>
                   </span>
                 </div>
-                <p className="leading-relaxed text-gray-400">Phasellus ultrices bibendum nibh in vehicula.</p>
+                {/* <p className="leading-relaxed text-gray-400">Phasellus ultrices bibendum nibh in vehicula.</p> */}
                 <ul className="space-y-2 text-gray-400">
                   <li className="flex items-center space-x-2">
                     <SVGTickGray />
