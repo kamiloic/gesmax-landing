@@ -48,17 +48,13 @@ const Pricing: NextPage<Props> = ({ data }) => {
                 </div>
                 <p className="mt-3 leading-relaxed text-gray-400">Etiam ac convallis enim, eget euismod dolor.</p>
                 <ul className="flex-1 mb-6 text-gray-400">
-                  <li className="flex mb-2 space-x-2">
-                    <SVGTickPrimary />
-                    <span>Aenean quis</span>
+                  <li className="flex items-center space-x-2">
+                    <SVGTickGray />
+                    <span>All features available</span>
                   </li>
-                  <li className="flex mb-2 space-x-2">
-                    <SVGTickPrimary />
-                    <span>Morbi semper</span>
-                  </li>
-                  <li className="flex mb-2 space-x-2">
-                    <SVGTickPrimary />
-                    <span>Tristique enim nec</span>
+                  <li className="flex items-center space-x-2">
+                    <SVGTickGray />
+                    <span>24/24 7/7 support</span>
                   </li>
                 </ul>
                 <button type="button" className="inline-block px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</button>
@@ -76,20 +72,20 @@ const Pricing: NextPage<Props> = ({ data }) => {
                 <ul className="flex-1 space-y-2">
                   <li className="flex items-center space-x-2">
                     <SVGTickGray />
-                    <span>Everything in Free</span>
+                    <span>All features available</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <SVGTickGray />
-                    <span>Phasellus tellus</span>
+                    <span>24/24 7/7 support</span>
                   </li>
-                  <li className="flex items-center space-x-2">
+                  {/* <li className="flex items-center space-x-2">
                     <SVGTickGray />
                     <span>Praesent faucibus</span>
                   </li>
                   <li className="flex items-center space-x-2">
                     <SVGTickGray />
                     <span>Aenean et lectus blandit</span>
-                  </li>
+                  </li> */}
                 </ul>
                 <a rel="noopener noreferrer" href="#" className="inline-block w-full px-5 py-3 font-bold tracking-wider text-center rounded dark:bg-gray-800 text-primary">Get Started</a>
               </div>
@@ -104,25 +100,13 @@ const Pricing: NextPage<Props> = ({ data }) => {
                 </div>
                 <p className="leading-relaxed text-gray-400">Phasellus ultrices bibendum nibh in vehicula.</p>
                 <ul className="space-y-2 text-gray-400">
-                  <li className="flex items-start space-x-2">
-                    <SVGTickPrimary />
-                    <span>Everything in Pro</span>
+                  <li className="flex items-center space-x-2">
+                    <SVGTickGray />
+                    <span>All features available</span>
                   </li>
-                  <li className="flex items-start space-x-2">
-                    <SVGTickPrimary />
-                    <span>Fusce sem ligula</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <SVGTickPrimary />
-                    <span>Curabitur dictum</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <SVGTickPrimary />
-                    <span>Duis odio eros</span>
-                  </li>
-                  <li className="flex items-start space-x-2">
-                    <SVGTickPrimary />
-                    <span>Vivamus ut lectus ex</span>
+                  <li className="flex items-center space-x-2">
+                    <SVGTickGray />
+                    <span>24/24 7/7 support</span>
                   </li>
                 </ul>
                 <a rel="noopener noreferrer" href="#" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
