@@ -29,7 +29,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
 
   return (
     <Layout locale={locale as string} title={title} desc={desc}>
-      <Header locale={locale as string} title="Pricing" subtitle={subtitle} active='pricing' />
+      <Header locale={locale as string} title="Pricing" subtitle={subtitle} active='pricing' image={{ src: "/images/prices.png", alt: "" }} />
       <section className="py-20 bg-gradient-to-r from-primary via-blue-800 to-blue-900 text-gray-100">
         <div className="container px-4 mx-auto">
           {/* <div className="max-w-2xl mx-auto mb-16 text-center">

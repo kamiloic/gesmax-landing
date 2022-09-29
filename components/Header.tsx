@@ -8,9 +8,13 @@ interface Props {
     title: string
     subtitle?: string
     hideHero?: boolean
+    image?: {
+        src?: string
+        alt: string
+    }
 }
 
-const Header: React.FC<Props> = ({ active, locale, title, subtitle, hideHero }) => {
+const Header: React.FC<Props> = ({ active, locale, title, subtitle, hideHero, image }) => {
     const activeLink = (routeName: string) => {
         // TODO: Use classnames from npm
         if (!active) return 'flex items-center px-4 -mb-1 border-b-2 border-transparent hover:text-primary transition-colors cursor-pointer'
@@ -96,7 +100,10 @@ const Header: React.FC<Props> = ({ active, locale, title, subtitle, hideHero }) 
                             </p>
                         </div>
                         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                            {/* <img src="/images/presentation_image.png" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" /> */}
+                            {
+                                image?.src && <img src={image.src} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+
+                            }
                         </div>
                     </div>
                 </section>
