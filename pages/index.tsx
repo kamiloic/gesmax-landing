@@ -3,6 +3,7 @@ import HomeHeader from '../components/HomeHeader'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import { useRouter } from 'next/router'
+import Customers from '../components/Customers'
 
 interface Props {
   data: {
@@ -17,6 +18,7 @@ const Home: NextPage<Props> = ({ data }) => {
     <Layout locale={locale as string} title={title} desc={desc}>
       <HomeHeader locale={locale as string} active="home" />
       <Features locale={locale as string} />
+      {/* <Customers locale={locale as string} /> */}
     </Layout>
   )
 }

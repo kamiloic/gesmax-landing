@@ -18,11 +18,11 @@ const Features: React.FC<Props> = ({ locale }) => {
     const title = isFr ? "Fonctionalitées" : "Features"
 
     return (
-        <div className="bg-black text-gray-100">
+        <div className="bg-gradient-to-r from-primary via-blue-800 to-blue-900 text-white">
             <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="max-w-3xl mx-auto text-center">
                     <h2 className="text-3xl font-extrabold sm:text-4xl">{title}</h2>
-                    <p className="mt-4 text-lg text-gray-400">A non-exhaustive list of Gesmax Features</p>
+                    <p className="mt-4 text-lg text-gray-200">A non-exhaustive list of Gesmax Features</p>
                 </div>
                 <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
 
@@ -32,7 +32,7 @@ const Features: React.FC<Props> = ({ locale }) => {
                                 <Tick />
                                 <div className="ml-3">
                                     <dt className="text-lg font-medium">{_feature.title}</dt>
-                                    <dd className="mt-2 text-gray-400">{_feature.desc}</dd>
+                                    <dd className="mt-2 text-gray-200">{_feature.desc}</dd>
                                 </div>
                             </div>
                         ))

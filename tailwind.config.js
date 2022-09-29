@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       colors: {
         'primary': '#3b82f6',
-        // 'black': '#0a1514',
+        'jade': '#00A86B',
         'secondary': '#C7A222',
         'tertiary': '#F8471C',
         'water': '#5d8a82',
