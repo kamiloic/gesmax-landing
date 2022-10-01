@@ -11,7 +11,7 @@ interface Props {
 }
 const Home: NextPage<Props> = ({ data }) => {
   const { locale } = useRouter()
-  const title = "Gesmax by Bogital"
+  const title = "Gesmax by Bogital - A Magical new way of managing your business"
   const desc = "Gesmax by Bogital Point of sale (POS) and business management software"
 
   return (
