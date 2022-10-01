@@ -81,8 +81,6 @@ const HomeHeader: React.FC<Props> = ({ active, locale }) => {
                 }
             </nav>
 
-            
-
             <section className="bg-white text-gray-900">
                 <div className="container flex flex-col justify-center p-6 mx-auto sm:py-6 lg:py-12 lg:flex-row lg:justify-between">
                     <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
