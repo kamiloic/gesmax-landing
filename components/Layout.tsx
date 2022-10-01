@@ -42,11 +42,7 @@ const Layout: React.FC<Props> = ({ children, locale, title, desc }) => {
                 <meta name="twitter:image" content="/favicon.png" />
             </Head>
 
-            <body>
-                <main>
-                    {children}
-                </main>
-            </body>
+            {children}
 
             {/* @ts-ignore */}
             <Footer locale={locale as string} />
