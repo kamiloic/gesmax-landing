@@ -36,7 +36,34 @@ const Pricing: NextPage<Props> = ({ data }) => {
             <span className="font-bold tracking-wider uppercase text-primary">Pricing</span>
             <h2 className="text-4xl font-bold lg:text-5xl">Choose your best plan</h2>
           </div> */}
+
           <div className="flex flex-wrap items-stretch -mx-4">
+
+            <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
+              <div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-gray-900">
+                <div className="space-y-2">
+                  <h4 className="text-2xl font-bold">Monthly</h4>
+                  <span className="text-4xl font-bold">0 FCFA
+                    <span className="text-sm tracking-wide">/month</span>
+                  </span>
+                  {/* <span className="text-6xl font-bold">Free</span> */}
+                </div>
+                {/* <p className="mt-3 leading-relaxed text-gray-400">Etiam ac convallis enim, eget euismod dolor.</p> */}
+                <ul className="flex-1 mb-6 text-gray-400">
+                  <li className="flex items-center space-x-2">
+                    <SVGTickGray />
+                    <span>30 Orders per month</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <SVGTickGray />
+                    <span>24/24 7/7 support</span>
+                  </li>
+                </ul>
+                <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
+              </div>
+            </div>
+
+
             <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
               <div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-gray-900">
                 <div className="space-y-2">
@@ -60,27 +87,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                 <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
               </div>
             </div>
-            {/* <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
-              <div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-white text-gray-900">
-                <div className="space-y-2">
-                  <h4 className="text-2xl font-bold">Biannual</h4>
-                  <span className="text-4xl font-bold">90 000 FCFA
-                    <span className="text-sm tracking-wide">/6 months</span>
-                  </span>
-                </div>
-                <ul className="flex-1 space-y-2">
-                  <li className="flex items-center space-x-2">
-                    <SVGTickGray />
-                    <span>All features available</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <SVGTickGray />
-                    <span>24/24 7/7 support</span>
-                  </li>
-                </ul>
-                <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-bold tracking-wider text-center rounded bg-primary text-white">Get Started</a>
-              </div>
-            </div> */}
+
             <div className="w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
               <div className="p-6 space-y-6 rounded shadow sm:p-8 bg-gray-900">
                 <div className="space-y-2">
