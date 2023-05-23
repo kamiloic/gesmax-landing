@@ -18,7 +18,7 @@ const Contact: NextPage<Props> = ({ data }) => {
       <Header locale={locale as string} title="Contact" subtitle={s.subtitle} active='contact' hideHero />
       <section className="min-h-screen bg-gradient-to-r from-primary via-blue-800 to-blue-900 ">
         {/* <section className="min-h-screen bg-gradient-to-r from-primary via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"> */}
-        <div className="container flex flex-col min-h-screen px-6 py-12 mx-auto">
+        <div className="container flex flex-col min-h-screen max-w-7xl px-6 py-12 mx-auto">
           <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
             <div className="text-white lg:w-1/2 lg:mx-6">
               <h1 className="text-3xl font-semibold capitalize lg:text-5xl">{s.contact}</h1>
@@ -111,7 +111,7 @@ const Contact: NextPage<Props> = ({ data }) => {
                     <textarea name="message" className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" placeholder="Message"></textarea>
                   </div>
 
-                  <input type="hidden" name="_next" value="https://gesmax.net"></input>
+                  <input type="hidden" name="_next" value="http://gesmax.vercel.app/"></input>
                   <input type="hidden" name="_subject" value="New submission! GESMAX"></input>
 
                   <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">

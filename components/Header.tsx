@@ -31,8 +31,8 @@ const Header: React.FC<Props> = ({ active, locale, title, subtitle, hideHero, im
     }
 
     return (
-        <header className="flex flex-col justify-between bg-cover">
-            <nav className="p-4 text-gray-800">
+        <header className="flex max-w-7xl mx-auto flex-col justify-between bg-cover">
+            <nav className="py-4 text-gray-800">
                 <div className="flex justify-between h-16 mx-auto">
                     <Link href="/" aria-label="Back to Gesmax by Bogital homepage" className="flex items-center p-2">
                         <div className="flex items-center cursor-pointer z-50 md:px-16">

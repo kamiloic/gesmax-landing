@@ -24,8 +24,8 @@ const HomeHeader: React.FC<Props> = ({ active, locale }) => {
     }
 
     return (
-        <header className="flex flex-col justify-between bg-cover">
-            <nav className="p-4 text-gray-800">
+        <header className="flex flex-col justify-between container max-w-7xl mx-auto bg-cover">
+            <nav className="py-4 text-gray-800">
                 <div className="flex justify-between h-16 mx-auto">
                     <Link href="/" aria-label="Back to Gesmax by Bogital homepage" className="flex items-center p-2">
                         <div className="flex items-center cursor-pointer z-50 md:px-16">
@@ -82,7 +82,7 @@ const HomeHeader: React.FC<Props> = ({ active, locale }) => {
             </nav>
 
             <section className="bg-white text-gray-900">
-                <div className="container flex flex-col justify-center p-6 mx-auto sm:py-6 lg:py-12 lg:flex-row lg:justify-between">
+                <div className="container flex flex-col justify-center py-6 mx-auto sm:py-6 lg:py-12 lg:flex-row lg:justify-between">
                     <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
                         <h1 className="text-5xl font-bold leading-none sm:text-5xl">A
                             <span className="text-primary"> Magical</span> new way of managing your business
@@ -93,7 +93,7 @@ const HomeHeader: React.FC<Props> = ({ active, locale }) => {
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
                             <Link href='contact'>
                                 <span className="px-8 py-3 text-lg font-semibold rounded bg-primary text-white cursor-pointer">
-                                    {isFrench ? 'Contactez-nous' : 'Contact us'}
+                                    {isFrench ? 'Demander une démo' : 'Request a demo'}
                                 </span>
                             </Link>
                             <Link href='/pricing'>
