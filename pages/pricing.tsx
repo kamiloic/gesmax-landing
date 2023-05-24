@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import Header from '../components/Header'
@@ -26,6 +27,15 @@ const Pricing: NextPage<Props> = ({ data }) => {
   const title = isFr ? "Coûts, Gesmax By Bogital" : "Pricing, Gesmax By Bogital"
   const desc = isFr ? "Coûts, Gesmax By Bogital" : "Pricing, Gesmax By Bogital"
   const subtitle = "Promotion: Free training till the 15th of October 2022"
+  const requestDemoText = isFr ? 'Demander une démo' : 'Request a demo'
+
+  const RequestDemo = () => (
+    <Link href='contact'>
+      <span className="inline-block w-full px-5 py-3 font-semibold tracking-wider cursor-pointer text-center rounded bg-primary text-gray-900">
+        {requestDemoText}
+      </span>
+    </Link>
+  )
 
   return (
     <Layout locale={locale as string} title={title} desc={desc}>
@@ -59,7 +69,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                     <span>24/24 7/7 support</span>
                   </li>
                 </ul>
-                <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
+                <RequestDemo />
               </div>
             </div>
 
@@ -84,7 +94,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                     <span>24/24 7/7 support</span>
                   </li>
                 </ul>
-                <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
+                <RequestDemo />
               </div>
             </div>
 
@@ -107,7 +117,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
                     <span>24/24 7/7 support</span>
                   </li>
                 </ul>
-                <a rel="noopener noreferrer" href="mailto:gesmax@bogital.com" className="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-primary text-gray-900">Get Started</a>
+                <RequestDemo />
               </div>
             </div>
           </div>
