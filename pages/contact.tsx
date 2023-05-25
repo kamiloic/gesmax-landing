@@ -56,7 +56,7 @@ const Contact: NextPage<Props> = ({ data }) => {
 
             <div className="mt-8 lg:w-1/2 lg:mx-6">
               {
-                query?.thanks && (
+                query?.thanks == '' && (
                   <div>
                     <p className='text-white text-center'>{s.thanks}</p>
                   </div>
@@ -91,7 +91,7 @@ const Contact: NextPage<Props> = ({ data }) => {
                   <input type="hidden" name="_subject" value="New submission! GESMAX"></input>
 
                   <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-primary rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-                    {s.getInTouch}
+                    {s.send}
                   </button>
                 </form>
               </div>
@@ -115,7 +115,7 @@ const strings = {
     'phone': 'Phone number',
     'email': 'Email address',
     'message': 'Message',
-    'getInTouch': 'get in touch',
+    'send': 'Send',
     "thanks": 'Thanks for subscribing to our waiting list! '
   },
   'fr': {
@@ -128,7 +128,7 @@ const strings = {
     'phone': 'Numéro de téléphone',
     'email': 'Adresse courriel',
     'message': 'Message',
-    'getInTouch': 'contactez-nous',
+    'send': 'Envoyer',
     "thanks": 'Thanks for subscribing to our waiting list! '
   },
 }
