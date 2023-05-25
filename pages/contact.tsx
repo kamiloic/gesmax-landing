@@ -57,7 +57,7 @@ const Contact: NextPage<Props> = ({ data }) => {
             <div className="mt-8 lg:w-1/2 lg:mx-6">
               {
                 query?.thanks == '' && (
-                  <div>
+                  <div className='p-4'>
                     <p className='text-white text-center'>{s.thanks}</p>
                   </div>
                 )
