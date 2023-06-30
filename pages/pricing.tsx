@@ -26,7 +26,7 @@ const Pricing: NextPage<Props> = ({ data }) => {
   const isFr = useMemo(() => (locale || '').toLowerCase().includes('fr'), [locale])
   const title = isFr ? "Coûts, Gesmax By Bogital" : "Pricing, Gesmax By Bogital"
   const desc = isFr ? "Coûts, Gesmax By Bogital" : "Pricing, Gesmax By Bogital"
-  const subtitle = "Promotion: Free training till the 15th of October 2022"
+  const subtitle = ""
   const requestDemoText = isFr ? 'Demander une démo' : 'Request a demo'
 
   const RequestDemo = () => (
