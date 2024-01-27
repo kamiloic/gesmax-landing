@@ -57,8 +57,8 @@ const Footer: React.FC<{}> = ({ }) => {
                 </ul> */}
             </div>
             
-            <div className="flex justify-between px-4 sm:px-6 lg:px-8">
-                <p className="text-xs text-center pt-4 p-2 md:pt-2">Powered with ❤️ by <a href="https://bogital.com" className="text-primary" target="_blank">Bogital</a></p>
+            <div className="flex flex-row items-center justify-between mb-4    px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <p className="text-xs text-center pt-4 md:pt-2">Powered with ❤️ by <a href="https://bogital.com" className="text-primary" target="_blank">Bogital</a></p>
                 <p className="text-xs text-center px-2 hover:text-primary"><a href="#@2024" target="_blank">@2024 </a>Bogital</p>
             </div>
         </footer>
