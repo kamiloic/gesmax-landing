@@ -17,8 +17,8 @@ const HomeHeader: React.FC<Props> = ({ active, locale }) => {
             <Navigation active={active} locale={locale} />
 
             <section className="bg-white text-gray-900">
-                <div className="container flex flex-col justify-center sm:py-6 lg:py-12 lg:flex-row lg:justify-between py-16 mx-auto max-w-7xl ">
-                    <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                <div className="container flex flex-col justify-center sm:py-6 lg:py-12 lg:flex-row lg:justify-items-stretch py-16 max-w-7xl ">
+                    <div className="flex flex-1 flex-col justify-center lg:justify-start p-6 text-center rounded-sm lg:text-left lg:max-w-md xl:max-w-lg">
                         <h1 className="text-5xl font-bold leading-none sm:text-5xl">A
                             <span className="text-primary"> Magical</span> new way of managing your business
                         </h1>
@@ -40,7 +40,7 @@ const HomeHeader: React.FC<Props> = ({ active, locale }) => {
                             </Link>
                         </div>
                     </div>
-                    <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+                    <div className="flex flex-1 items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                         <img src="/images/presentation_image.png" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
                     </div>
                 </div>
