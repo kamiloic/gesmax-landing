@@ -13,17 +13,36 @@ interface Props {
 const Pricing: NextPage<Props> = ({ data }) => {
   const { locale } = useRouter()
   const isFr = useMemo(() => (locale || '').toLowerCase().includes('fr'), [locale])
-  const title = isFr ? "Coûts, Gesmax By Bogital" : "Pricing, Gesmax By Bogital"
-  const desc = isFr ? "Coûts, Gesmax By Bogital" : "Pricing, Gesmax By Bogital"
-  const subtitle = ""
+  const strings = useStrings(isFr);
+
   return (
-    <Layout locale={locale as string} title={title} desc={desc}>
-      <Header locale={locale as string} title="Pricing" subtitle={subtitle} active='pricing' image={{ src: "/images/prices.png", alt: "" }} />
-      <PricingComponent  />
+    <Layout locale={locale as string} title={strings.title} desc={strings.desc}>
+      <Header locale={locale as string} title={strings.headerTitle} subtitle={strings.headerSubtitle} active='pricing' image={{ src: "/images/prices.png", alt: "" }} />
+      <PricingComponent />
     </Layout>
   )
 }
 
+const useStrings = (isFr: boolean) => {
+  return useMemo(() => {
+    const strings = {
+      'en': {
+        'title': 'Pricing, Gesmax By Bogital',
+        'desc': 'Pricing, Gesmax By Bogital',
+        'headerTitle': 'Pricing',
+        'headerSubtitle': ''
+      },
+      'fr': {
+        'title': 'Coûts, Gesmax By Bogital',
+        'desc': 'Coûts, Gesmax By Bogital',
+        'headerTitle': 'Coûts',
+        'headerSubtitle': ''
+      }
+    };
+
+    return isFr ? strings['fr'] : strings['en'];
+  }, [isFr]);
+}
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const data: any[] = []
@@ -31,6 +50,5 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: { data }
   };
 }
-
 
 export default Pricing
