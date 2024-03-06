@@ -43,9 +43,9 @@ const Footer: React.FC<Props> = ({ locale }) => {
                 </div>
             </div>
 
-            <div className="flex flex-row items-center justify-between mb-4 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="flex flex-row items-end justify-center mb-4 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <p className="text-xs text-center pt-4 md:pt-2">{strings.poweredBy} <a href="https://bogital.com" className="text-primary" target="_blank" rel="noreferrer">Bogital</a></p>
-                <p className="text-xs text-center px-2 hover:text-primary"><a href="#@2024" target="_blank" rel="noreferrer">@2024 </a>Bogital</p>
+                <p className="text-xs text-center px-2 hover:text-primary"><a href="#@2024" target="_blank" rel="noreferrer">@2024 </a>Gesmax</p>
             </div>
         </footer>
     )
