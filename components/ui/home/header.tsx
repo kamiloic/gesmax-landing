@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Navigation } from "./navigation"
+import { Navigation } from "../../navigation"
 
 interface Props {
     active: string;
@@ -50,15 +50,15 @@ const useStrings = (locale: string) => {
     return {
         en: {
             title: "A <span style='color:#3b82f6'>Magical</span> new way of managing your business",
-            subtitle: "For seamless business management anytime, anywhere: Gesmax by Bogital is accessible on all major app stores and platforms – including PC, Android, iOS, and web – ensuring convenience and flexibility for your workflow.",
+            subtitle: "For seamless business management anytime, anywhere: Gesmax is accessible on all major platforms – including PC, Android, iOS, and web – ensuring convenience and flexibility for your workflow.",
             demo: "Request a demo",
             seePricing: "See pricing"
         },
         fr: {
             title: "Une nouvelle façon <span style='color:#3b82f6'>Magique</span> de gérer votre entreprise",
-            subtitle: "Pour une gestion commerciale fluide, où que vous soyez : Gesmax par Bogital est disponible sur toutes les grandes plateformes et magasins d'applications, notamment sur PC, Android, iOS et le web, garantissant ainsi une commodité et une flexibilité optimales pour votre flux de travail.",
+            subtitle: "Pour une gestion commerciale fluide, où que vous soyez : Gesmax est disponible sur toutes les grandes plateformes, notamment sur PC, Android, iOS et le web, garantissant ainsi une commodité et une flexibilité optimales pour votre flux de travail.",
             demo: "Démo",
-            seePricing: "Voir les prix"
+            seePricing: "Voir les coûts?"
         }
     }[isFr ? 'fr' : 'en'];
 }

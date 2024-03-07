@@ -1,10 +1,11 @@
 import type { GetStaticProps, NextPage } from 'next'
-import HomeHeader from '../components/HomeHeader'
+import HomeHeader from '../components/ui/home/header'
 import Layout from '../components/Layout'
-import Features from '../components/Features'
+import Features from '../components/ui/home/features'
 import { useRouter } from 'next/router'
-import Customers from '../components/Customers'
-import FAQ from '../components/FAQ'
+import Customers from '../components/ui/home/customers'
+import Testimonials from '../components/ui/home/testimonials'
+import GrowthInsights from '../components/ui/home/growth_insights'
 
 interface Props {
   data: {
@@ -18,9 +19,13 @@ const Home: NextPage<Props> = ({ data }) => {
   return (
     <Layout locale={locale as string} title={title} desc={desc}>
       <HomeHeader locale={locale as string} active="home" />
-      <Features locale={locale as string} />
-      {/* <Customers locale={locale as string} /> */}
-      {/* <FAQ locale={locale as string} /> */}
+      <Customers locale={locale as string} />
+      <Features featureSet={1} locale={locale as string} />
+      <Testimonials locale={locale as string} />
+      <Features featureSet={2} locale={locale as string} />
+      <GrowthInsights locale={locale as string} />
+      <Features featureSet={3} locale={locale as string} />
+      {/* <Meeting30Minites locale={locale as string} /> */}
     </Layout>
   )
 }

@@ -30,7 +30,7 @@ const Testimonials: React.FC<Props> = ({ locale }) => {
                     <h2 className="text-3xl font-extrabold sm:text-4xl">{s.title}</h2>
                     <h3 className="mt-4 text-lg">{s.subtitle}</h3>
                 </div>
-                <div className="container mt-12 max-w-xl mx-auto">
+                <div className="container mt-12 max-w-xl mx-auto rounded-xl">
                     <div className="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
                         <img src={s.list[currentTestimonial].image || "https://source.unsplash.com/random/200x200"} alt={s.list[currentTestimonial].business} className="w-20 h-20 rounded-full dark:bg-gray-500" />
                         <blockquote className="max-w-lg text-lg italic font-medium text-center">{s.list[currentTestimonial].desc}</blockquote>
@@ -73,7 +73,7 @@ const strings = {
                 business: "Le Bao",
                 author: "Murielle",
                 position: "Owner",
-                image: "" // Add image path
+                image: "/images/bao.jpg"
             },
             {
                 desc: "Managing inventory in the beauty industry can be challenging, but Gesmax has made it simple and hassle-free. Now, we can focus on providing exceptional service to our clients without worrying about stock shortages.",
@@ -107,7 +107,7 @@ const strings = {
                 business: "Le Bao",
                 author: "Murielle",
                 position: "Propriétaire",
-                image: "" // Add image path
+                image: "/images/bao.jpg"
             },
             {
                 desc: "La gestion des stocks dans l'industrie de la beauté peut être difficile, mais Gesmax l'a rendue simple et sans tracas. Maintenant, nous pouvons nous concentrer sur la fourniture d'un service exceptionnel à nos clients sans nous soucier des",

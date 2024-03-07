@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
+import { TitleSubTitle } from "../title-subtitle";
 
 interface Props {
     locale: string;
@@ -31,10 +32,10 @@ const Features: React.FC<Props> = ({ locale, featureSet }) => {
         <div className="bg-gradient-to-r from-primary via-blue-800 to-blue-900 text-white">
             <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
 
-                <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="text-3xl font-extrabold sm:text-4xl">{s.title[titleIndex]}</h2>
-                    <h3 className="mt-4 text-lg text-gray-200">{s.subtitle[titleIndex]}</h3>
-                </div>
+                <TitleSubTitle
+                    title={s.title[titleIndex]}
+                    subtitle={s.subtitle[titleIndex]}
+                />
 
                 <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12">
                     {
