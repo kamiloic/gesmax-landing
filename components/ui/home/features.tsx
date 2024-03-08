@@ -1,20 +1,15 @@
 import { useRouter } from "next/router";
 import { useCallback, useMemo } from "react";
 import { TitleSubTitle } from "../title-subtitle";
+import { Tick } from "../icons/tick";
 
 interface Props {
     locale: string;
     featureSet: number;
 }
 
-const Tick = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" className="flex-shrink-0 w-6 h-6 text-white">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-    </svg>
-);
 
 const Features: React.FC<Props> = ({ locale, featureSet }) => {
-    const router = useRouter();
     const lang = useMemo(() => (locale || '').toLowerCase().includes('fr'), [locale]) ? 'fr' : 'en';
     const s = strings[lang];
 
@@ -29,7 +24,7 @@ const Features: React.FC<Props> = ({ locale, featureSet }) => {
     }, [featureSet]);
 
     return (
-        <div className="bg-gradient-to-r from-primary via-blue-800 to-blue-900 text-white">
+        <div className="bg-gradient-to-bl from-blue-800 to-gray-800 text-white">
             <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
 
                 <TitleSubTitle
