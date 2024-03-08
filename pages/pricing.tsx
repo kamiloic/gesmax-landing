@@ -30,13 +30,13 @@ const useStrings = (isFr: boolean) => {
         'title': 'Pricing, Gesmax By Bogital',
         'desc': 'Pricing, Gesmax By Bogital',
         'headerTitle': 'Pricing',
-        'headerSubtitle': ''
+        'headerSubtitle': 'Find the right plan with pricing that scales with your team'
       },
       'fr': {
         'title': 'Coûts, Gesmax By Bogital',
         'desc': 'Coûts, Gesmax By Bogital',
         'headerTitle': 'Coûts',
-        'headerSubtitle': ''
+        'headerSubtitle': 'Trouvez le tarif adapté à l\'échelle de votre équipe.'
       }
     };
 
