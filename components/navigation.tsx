@@ -39,6 +39,11 @@ export const Navigation: React.FC<Props> = ({ active, locale }) => {
 								<span className="">{strings.pricing}</span>
 							</Link>
 						</li>
+						<li className={activeLink('download')}>
+							<Link href='/download' className="flex items-center -mb-1">
+								<span className="flex">{strings.download}</span>
+							</Link>
+						</li>
 						<li className={activeLink('contact')}>
 							<Link href='/contact' className="flex items-center -mb-1">
 								<span className="">{strings.contact}</span>
@@ -57,6 +62,11 @@ export const Navigation: React.FC<Props> = ({ active, locale }) => {
 							<li className={activeLink('pricing')}>
 								<Link href='/pricing' className="flex">
 									<span className="flex">{strings.pricing}</span>
+								</Link>
+							</li>
+							<li className={activeLink('download')}>
+								<Link href='/download' className="flex">
+									<span className="flex">{strings.download}</span>
 								</Link>
 							</li>
 							<li className={activeLink('contact')}>
@@ -79,13 +89,15 @@ const useStrings = (locale: string) => {
 			backToHomepage: "Back to Gesmax by Bogital homepage",
 			logoAlt: "Gesmax by Bogital Logo",
 			pricing: "Pricing",
-			contact: "Contact"
+			contact: "Contact",
+			download: 'Download',
 		},
 		fr: {
 			backToHomepage: "Retour à la page d'accueil de Gesmax by Bogital",
 			logoAlt: "Logo de Gesmax by Bogital",
 			pricing: "Coûts",
-			contact: "Contact"
+			contact: "Contact",
+			download: 'Télécharger',
 		}
 	}[isFrench ? 'fr' : 'en'];
 }
