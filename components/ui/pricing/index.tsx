@@ -47,7 +47,7 @@ const PricingComponent: NextPage<Props> = ({ }) => {
 			<div className="container max-w-7xl px-4 mx-auto">
 				<div className="max-w-2xl mx-auto mb-16 text-center">
 					<span className="font-bold tracking-wider uppercase text-primary">{strings.pricingTitle}</span>
-					<p className='text-2xl'>
+					<p className='text-2xl lg:text-5xl'>
 						<input
 							className='bg-transparent w-16 text-center'
 							type="number"
@@ -56,7 +56,7 @@ const PricingComponent: NextPage<Props> = ({ }) => {
 							min={3}
 							max={200}
 						/>
-						<h2 className="font-bold lg:text-5xl inline-block">{strings.usersQuestion}</h2>
+						<h2 className="font-bold inline-block">{strings.usersQuestion}</h2>
 					</p>
 				</div>
 
