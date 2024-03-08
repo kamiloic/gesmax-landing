@@ -1,160 +1,208 @@
-import { GetStaticProps, NextPage } from 'next'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useMemo, useState } from 'react'
-import CurrencyFormat from '../currency-format'
 
-interface Props {
+
+import clsx from 'clsx';
+import React, { useMemo, useState } from 'react';
+import CurrencyFormat from '../currency-format';
+import Link from 'next/link';
+import { Tick } from '../icons/tick';
+
+interface PricingProps {
+	strings: {
+		title: string;
+		description: string;
+		usersLabel: string;
+		free30: string;
+		buttonText: string;
+		items: string[];
+		planLabels: {
+			monthly: string;
+			yearly: string;
+			threeYears: string;
+		}
+	};
 }
 
-const SVGTickGray = () => (
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
-		<path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+interface ListItemProps {
+	label: string;
+	pro?: boolean
+}
+
+const QuestionMark = () => (
+	<svg width="21" height="22" viewBox="0 0 21 22" fill="none" className="text-gray-400">
+		<path fillRule="evenodd" clipRule="evenodd" d="M10.5 21.5C16.299 21.5 21 16.799 21 11S16.299.5 10.5.5 0 5.201 0 11s4.701 10.5 10.5 10.5zm.896-8.085H9.502v-.148c.012-2.045.591-2.676 1.597-3.301.688-.432 1.216-.977 1.216-1.773 0-.892-.699-1.471-1.568-1.471-.801 0-1.574.511-1.625 1.58H7.1c.057-2.16 1.67-3.262 3.66-3.262 2.17 0 3.664 1.204 3.664 3.125 0 1.3-.653 2.153-1.699 2.778-.926.568-1.318 1.12-1.33 2.324v.148zm.352 2.295a1.265 1.265 0 01-1.25 1.25 1.243 1.243 0 01-1.25-1.25 1.24 1.24 0 011.25-1.238c.67 0 1.244.556 1.25 1.238z" fill="currentColor"></path>
 	</svg>
 )
 
-const PricingComponent: NextPage<Props> = ({ }) => {
-	const [userCount, setUserCount] = useState<number>(3);
-	const { locale } = useRouter()
-	const isFr = useMemo(() => (locale || '').toLowerCase().includes('fr'), [locale])
-	const { strings } = useStrings(isFr);
-
-	const RequestDemo = () => (
-		<Link href='contact'>
-			<span className="inline-block w-full px-5 py-3 font-semibold tracking-wider cursor-pointer text-center rounded bg-primary text-gray-900">
-				{strings.requestDemoText}
-			</span>
-		</Link>
-	)
-
-	// Handler function to update userCount state
-	const handleUserCountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const newCount = parseInt(e.target.value);
-		// Perform input validation to ensure userCount is always greater than or equal to 3
-		if (newCount >= 3) {
-			setUserCount(newCount);
-		}
-	};
-
-	const monthlyFee = useMemo(() => {
-		if (userCount <= 3)
-			return 25;
-		return 25 + (10 * (userCount - 3))
-	}, [userCount])
-
+const ListItem: React.FC<ListItemProps> = ({ label, pro = false }) => {
 	return (
-		<section className="py-20 bg-gradient-to-r from-primary via-blue-800 to-blue-900 text-gray-100">
-			<div className="container max-w-7xl px-4 mx-auto">
-				<div className="max-w-2xl mx-auto mb-16 text-center">
-					<span className="font-bold tracking-wider uppercase text-primary">{strings.pricingTitle}</span>
-					<p className='text-2xl lg:text-5xl'>
-						<input
-							className='bg-transparent w-16 text-center'
-							type="number"
-							value={userCount} // Bind input value to userCount state
-							onChange={handleUserCountChange} // Handle input change
-							min={3}
-							max={200}
-						/>
-						<h2 className="font-bold inline-block">{strings.usersQuestion}</h2>
-					</p>
-				</div>
-
-
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-					{strings.pricingSections.map((section, index) => (
-						<div className="flex w-full mb-8 sm:px-4 md:w-full lg:mb-0" key={index}>
-							<div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-gray-900">
-								<div className="space-y-2">
-									<h4 className="text-2xl font-bold">{section.title}</h4>
-									<span className="text-4xl font-bold">
-										<CurrencyFormat amount={section.price * monthlyFee} />
-									</span>
-								</div>
-								<ul className="flex-1 mb-6 text-gray-400">
-									{section.features.map((feature, index) => (
-										<li className="flex items-center space-x-2" key={index}>
-											<SVGTickGray />
-											<span>{feature}</span>
-										</li>
-									))}
-								</ul>
-								<RequestDemo />
-							</div>
-						</div>
-					))}
-				</div>
+		<li className="flex mt-4">
+			<div className="flex-shrink-0">
+				<Tick color={pro ? "" : "text-primary"} />
 			</div>
-		</section>
-	)
-}
-
-const strings = {
-	'en': {
-		'pricingTitle': 'Pricing',
-		'usersQuestion': 'users?',
-		'requestDemoText': 'Request a demo',
-		'pricingSections': [
-			{
-				'title': 'Free',
-				'price': 0,
-				'features': ['30 Orders per month', 'Limited support']
-			},
-			{
-				'title': '1 Month',
-				'price': 1,
-				'features': ['All features available', '24/24 7/7 support']
-			},
-			{
-				'title': '1 Year',
-				'price': 11,
-				'features': ['All features available', '24/24 7/7 support']
-			},
-			{
-				'title': '3 Years',
-				'price': 30,
-				'features': ['All features available', '24/24 7/7 support']
-			}
-		]
-	},
-	'fr': {
-		'pricingTitle': 'Tarification',
-		'usersQuestion': 'utilisateurs?',
-		'requestDemoText': 'Demander une démo',
-		'pricingSections': [
-			{
-				'title': 'Gratuit',
-				'price': 0,
-				'features': ['30 Commandes par mois', 'Support limité']
-			},
-			{
-				'title': '1 Mois',
-				'price': 1,
-				'features': ['Toutes les fonctionnalités disponibles', '24/24 7/7 support']
-			},
-			{
-				'title': '1 An',
-				'price': 11,
-				'features': ['Toutes les fonctionnalités disponibles', '24/24 7/7 support']
-			},
-			{
-				'title': '3 Ans',
-				'price': 30,
-				'features': ['Toutes les fonctionnalités disponibles', '24/24 7/7 support']
-			}
-		]
-	},
+			<p className={
+				clsx(
+					"flex-1 ml-3 text-base leading-6",
+					pro ? "text-white" : "text-gray-800"
+				)
+			}>{label}</p>
+			<span className="ml-2"></span>
+			<button className="focus:outline-none focus:ring-2">
+				<QuestionMark />
+			</button>
+		</li>
+	);
 };
 
-const useStrings = (isFr: boolean) => {
-	return { strings: isFr ? strings['fr'] : strings['en'] };
+
+interface PricingSliderProps {
+	selectedPlan: 'monthly' | 'yearly' | 'threeYears';
+	usersLabel: string;
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-	const data: any[] = []
-	return {
-		props: { data }
+const PricingSlider: React.FC<PricingSliderProps> = ({ selectedPlan, usersLabel }) => {
+	const [users, setUsers] = useState(3);
+
+	const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const newUserCount = parseInt(event.target.value);
+		setUsers(newUserCount);
 	};
-}
 
-export default PricingComponent
+	const price = useMemo(() => {
+		const newPrice = (() => {
+			if (selectedPlan === 'monthly')
+				return 25 + (users - 3) * 10;
+			if (selectedPlan === 'yearly')
+				return (25 + (users - 3) * 10) * 11;
+			if (selectedPlan === 'threeYears')
+				return (25 + (users - 3) * 10) * 30;
+			return 0;
+		})();
+		return newPrice;
+	}, [selectedPlan, users]);
+
+	return (
+		<div className="flex flex-col items-center justify-center py-8">
+			<div className="flex w-full justify-between">
+				<div className="text-3xl font-bold mb-4">
+					{users} {usersLabel}
+				</div>
+				<div className="text-lg font-semibold mt-4">
+					<CurrencyFormat amount={price} />
+				</div>
+			</div>
+			<div className="relative w-full">
+				<input
+					type="range"
+					min="3"
+					max="200"
+					value={users}
+					onChange={handleSliderChange}
+					className="absolute top-0 left-0 w-full rounded h-8 bg-gray-200 appearance-none cursor-pointer"
+				/>
+				<div className="absolute top-0 left-0 h-8 bg-blue-500" style={{ width: `${((users - 3) / (200 - 3)) * 100}%` }}></div>
+			</div>
+		</div>
+	);
+};
+
+
+const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
+	const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'yearly' | 'threeYears'>('monthly');
+
+	const handleTabChange = (tab: 'monthly' | 'yearly' | 'threeYears') => {
+		setSelectedPlan(tab);
+	};
+
+	const isPro = strings.title == "Pro";
+
+	return (
+		<div className={clsx(
+			"w-full transform",
+			isPro && "bg-gradient-to-bl from-blue-800 to-gray-800 py-8 text-white"
+		)}>
+			<div className="md:flex max-w-5xl py-8 mx-auto">
+				<div>
+					<span style={{ boxSizing: 'border-box', display: 'inline-block', overflow: 'hidden', width: 'initial', height: 'initial', background: 'none', opacity: 1, border: '0px', margin: '0px', padding: '0px', position: 'relative', maxWidth: '100%' }}>
+						<span style={{ boxSizing: 'border-box', display: 'block', width: 'initial', height: 'initial', background: 'none', opacity: 1, border: '0px', margin: '0px', padding: '0px', maxWidth: '100%' }}>
+							<img alt="" aria-hidden="true" src="/favicon.png" style={{ display: 'block', maxWidth: '100%', width: 'initial', height: 'initial', background: 'none', opacity: 1, border: '0px', margin: '0px', padding: '0px' }} />
+						</span>
+					</span>
+				</div>
+				<div className="flex-1 p-6">
+					<div className="flex flex-col items-end justify-between md:flex-row md:items-start pt-8 md:pt-0">
+						<div className="w-full">
+							<h2 className="mt-3 font-serif text-4xl font-bold">{strings.title}<span className="text-blue=-400 inline-block transition-transform transform duration-100 scale-0" style={{ textShadow: 'rgba(254, 188, 53, 0.8) 0px 0px 25px' }}> ∞ </span></h2>
+							<p className={clsx(isPro && "text-gray-300")}>{strings.description}</p>
+						</div>
+						{
+							isPro && (
+								<div className="flex flex-col w-full mt-3 md:mt-0 md:w-128 md:mx-0">
+									<div className="relative flex order-10 border border-blue=-500 rounded-full border-opacity-20">
+										<div className="absolute left-0 grid w-full grid-cols-2 h-7">
+											<div
+												className={clsx("bg-white rounded-full h-full w-[66.67%] left-0 transform transition-transform", {
+													'translate-x-0': selectedPlan === 'monthly',
+													'translate-x-[100%]': selectedPlan === 'yearly',
+													'translate-x-[200%]': selectedPlan === 'threeYears',
+												})}
+											></div>
+										</div>
+										<div className="relative grid w-full grid-cols-3">
+											<button
+												onClick={() => handleTabChange('monthly')}
+												className={clsx(
+													"text-sm py-1 relative px-4 focus:outline-none ring-blue-800 ring-opacity-30 rounded-full font-semibold focus:ring-4 bg-transparent",
+													selectedPlan === 'monthly' ? "text-gray-800" : "text-gray-400"
+												)}
+											>
+												{strings.planLabels.monthly}
+											</button>
+											<button
+												onClick={() => handleTabChange('yearly')}
+												className={clsx(
+													"text-sm py-1 relative px-4 focus:outline-none ring-blue-800 ring-opacity-30 rounded-full font-semibold focus:ring-4 bg-transparent",
+													selectedPlan === 'yearly' ? "text-gray-800" : "text-gray-400"
+												)}
+											>
+												{strings.planLabels.yearly}
+											</button>
+											<button
+												onClick={() => handleTabChange('threeYears')}
+												className={clsx(
+													"text-sm py-1 relative px-4 focus:outline-none ring-blue-800 ring-opacity-30 rounded-full font-semibold focus:ring-4 bg-transparent",
+													selectedPlan === 'threeYears' ? "text-gray-800" : "text-gray-400"
+												)}
+											>
+												{strings.planLabels.threeYears}
+											</button>
+										</div>
+									</div>
+									<div className="relative grid w-full grid-cols-2 my-1 md:order-10">
+										<div className="text-center col-start-2 text-sm font-semibold whitespace-nowrap opacity-40">{strings.free30}</div>
+									</div>
+								</div>
+							)
+						}
+					</div>
+					{
+						isPro && <PricingSlider usersLabel={strings.usersLabel} selectedPlan={selectedPlan} />
+					}
+					<div className="grid w-full gap-4 mt-2 text-gray-800 md:grid-cols-2">
+						{
+							strings.items.map((item, index) => (
+								<ListItem pro={strings.title == "Pro"} key={index} label={item} />
+							))
+						}
+					</div>
+					<div className="flex justify-end mt-2">
+						<Link className="inline-block" tabIndex={-1} href="/contact">
+							<button className="mt-8 px-10 py-3 text-center flex justify-center rounded-lg relative font-medium custom-focus  bg-primary hover:bg-blue-800 active:bg-primary text-white">{strings.buttonText}</button>
+						</Link>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default PricingComponent;
