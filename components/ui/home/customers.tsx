@@ -21,8 +21,8 @@ const Customers: React.FC<Props> = ({ locale }) => {
     return (
         <div className="text-gray-900">
             <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <h3 className="text-xl font-extrabold sm:text-2xl">{s.title}</h3>
-                <p className="mt-4 text-lg text-gray-600">{s.desc}</p>
+                <h3 className="text-3xl font-extrabold sm:text-4xl">{s.title}</h3>
+                <p className="mt-4 text-lg">{s.desc}</p>
                 <dl className="mt-4 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
                     {
                         customers.map((_customer, i) => (
