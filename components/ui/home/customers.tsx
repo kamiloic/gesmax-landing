@@ -6,11 +6,11 @@ interface Props {
 
 const strings = {
     'en': {
-        'title': 'They use Gesmax - our fav',
+        'title': 'They use Gesmax — our fav',
         'desc': 'A non-exhaustive list of Gesmax Customers'
     },
     'fr': {
-        'title': 'Ils utilisent Gesmax - notre préféré',
+        'title': 'Ils utilisent Gesmax — nos préférés',
         'desc': 'Une liste non exhaustive des clients de Gesmax'
     }
 };

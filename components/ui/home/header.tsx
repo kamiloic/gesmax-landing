@@ -55,7 +55,7 @@ const useStrings = (locale: string) => {
             seePricing: "See pricing"
         },
         fr: {
-            title: "Une nouvelle façon <span style='color:#3b82f6'>Magique</span> de gérer votre entreprise",
+            title: "Une façon <span style='color:#3b82f6'>Magique</span> de gérer votre entreprise",
             subtitle: "Pour une gestion commerciale fluide, où que vous soyez : Gesmax est disponible sur toutes les grandes plateformes, notamment sur PC, Android, iOS et le web, garantissant ainsi une commodité et une flexibilité optimales pour votre flux de travail.",
             demo: "Démo",
             seePricing: "Voir les coûts?"
