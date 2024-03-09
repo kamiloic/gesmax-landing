@@ -22,8 +22,8 @@ const Header: React.FC<Props> = ({ active, locale, title, subtitle, hideHero, im
             {
                 !hideHero &&
                 <section className="bg-white text-gray-900">
-                    <div className="container flex flex-col justify-center p-6 mx-auto sm:py-6 lg:py-12 lg:flex-row lg:justify-between">
-                        <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
+                    <div className="container flex flex-col justify-center p-6 mx-auto sm:py-6 lg:py-12 lg:flex-row lg:justify-center">
+                        <div className="flex flex-col justify-center p-6 text-center rounded-sm xl:max-w-2xl">
                             <h1 className="text-5xl font-bold leading-none sm:text-5xl">
                                 {title}
                             </h1>
@@ -31,12 +31,6 @@ const Header: React.FC<Props> = ({ active, locale, title, subtitle, hideHero, im
                                 {subtitle || ''}
                             </p>
                         </div>
-                        {
-                            image?.src &&
-                            <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                                <img src={image.src} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
-                            </div>
-                        }
                     </div>
                 </section>
             }
