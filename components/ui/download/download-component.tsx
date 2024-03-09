@@ -14,9 +14,9 @@ interface Props {
 const DownloadComponent: NextPage<Props> = ({ locale }) => {
 	const s = strings[(locale || '').toLowerCase().includes('fr') ? 'fr' : 'en'];
 	return (
-		<section className="py-8 bg-gradient-to-bl from-blue-800 to-gray-800 text-gray-100">
+		<section className="py-16 bg-gradient-to-bl from-blue-800 to-gray-800 text-gray-100">
 			<div className="container max-w-7xl px-4 mx-auto">
-				<div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 					{s.downloadLinks.map((link, index) => (
 						<div className="flex flex-col space-y-4 w-full mb-8 sm:px-4 md:w-full lg:mb-0" key={index}>
 							<div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-gray-900">

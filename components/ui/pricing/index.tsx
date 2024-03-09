@@ -130,7 +130,7 @@ const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 			isPro && "bg-gradient-to-bl from-blue-800 to-gray-800 text-white"
 		)}>
 			<div className="md:flex max-w-5xl mx-auto">
-				<div>
+				<div className='px-4'>
 					<span style={{ boxSizing: 'border-box', display: 'inline-block', overflow: 'hidden', width: 'initial', height: 'initial', background: 'none', opacity: 1, border: '0px', margin: '0px', padding: '0px', position: 'relative', maxWidth: '100%' }}>
 						<span style={{ boxSizing: 'border-box', display: 'block', width: 'initial', height: 'initial', background: 'none', opacity: 1, border: '0px', margin: '0px', padding: '0px', maxWidth: '100%' }}>
 							<img alt="" aria-hidden="true" src="/favicon.png" style={{ display: 'block', maxWidth: '100%', width: 'initial', height: 'initial', background: 'none', opacity: 1, border: '0px', margin: '0px', padding: '0px' }} />

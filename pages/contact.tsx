@@ -17,10 +17,10 @@ const Contact: NextPage<Props> = ({ data }) => {
     <Layout locale={locale as string} title={s.title} desc={s.desc}>
       <Header locale={locale as string} title={s.title} subtitle={s.subtitle} active='contact' />
       <section className="bg-gradient-primary">
-        <div className="container flex flex-col max-w-7xl px-6 mx-auto py-12">
-          <div className="flex-1 lg:flex lg:items-center lg:-mx-6 space-y-4 md:space-y-0">
+        <div className="container flex flex-col max-w-7xl px-6 mx-auto py-16">
+          <div className="flex-1 lg:flex lg:items-center lg:-mx-6 space-y-4 lg:space-y-0">
 
-            <div className="lg:w-1/2 lg:mx-6">
+            <div className="lg:w-4/6 2xl:w-1/2 lg:mx-6">
               {
                 query?.thanks == '' && (
                   <div className='p-4'>
@@ -63,7 +63,7 @@ const Contact: NextPage<Props> = ({ data }) => {
               </div>
             </div>
 
-            <div className="text-white lg:w-1/2 lg:mx-6">
+            <div className="text-white lg:w-2/6 2xl:w-1/2 lg:mx-6">
               <h1 className="text-3xl font-semibold capitalize lg:text-5xl">{s.contact}</h1>
 
               <div className="mt-6 space-y-8 md:mt-8">
