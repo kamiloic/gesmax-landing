@@ -16,8 +16,8 @@ const Contact: NextPage<Props> = ({ data }) => {
   return (
     <Layout locale={locale as string} title={s.title} desc={s.desc}>
       <Header locale={locale as string} title={s.title} subtitle={s.subtitle} active='contact' />
-      <section className="min-h-screen bg-gradient-primary">
-        <div className="container flex flex-col min-h-screen max-w-7xl px-6 py-12 mx-auto">
+      <section className="bg-gradient-primary">
+        <div className="container flex flex-col max-w-7xl px-6 mx-auto py-12">
           <div className="flex-1 lg:flex lg:items-center lg:-mx-6 space-y-4 md:space-y-0">
 
             <div className="lg:w-1/2 lg:mx-6">
