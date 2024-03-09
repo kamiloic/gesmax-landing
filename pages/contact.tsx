@@ -15,13 +15,12 @@ const Contact: NextPage<Props> = ({ data }) => {
 
   return (
     <Layout locale={locale as string} title={s.title} desc={s.desc}>
-      <Header locale={locale as string} title="Contact" subtitle={s.subtitle} active='contact' hideHero />
-      <section className="min-h-screen bg-gradient-to-r from-primary via-blue-800 to-blue-900 ">
-        {/* <section className="min-h-screen bg-gradient-to-r from-primary via-blue-800 to-blue-900 dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"> */}
+      <Header locale={locale as string} title={s.title} subtitle={s.subtitle} active='contact' />
+      <section className="min-h-screen bg-gradient-primary">
         <div className="container flex flex-col min-h-screen max-w-7xl px-6 py-12 mx-auto">
-          <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
+          <div className="flex-1 lg:flex lg:items-center lg:-mx-6 space-y-4 md:space-y-0">
 
-            <div className="mt-8 lg:w-1/2 lg:mx-6">
+            <div className="lg:w-1/2 lg:mx-6">
               {
                 query?.thanks == '' && (
                   <div className='p-4'>
@@ -63,7 +62,7 @@ const Contact: NextPage<Props> = ({ data }) => {
                 </form>
               </div>
             </div>
-            
+
             <div className="text-white lg:w-1/2 lg:mx-6">
               <h1 className="text-3xl font-semibold capitalize lg:text-5xl">{s.contact}</h1>
 
@@ -106,9 +105,9 @@ const Contact: NextPage<Props> = ({ data }) => {
 
 const strings = {
   'en': {
-    'title': 'Contact, Gesmax By Bogital',
+    'title': 'Contact',
     'desc': 'Contact, Gesmax By Bogital',
-    'subtitle': '',
+    'subtitle': 'Reach Out to Us',
     'contact': 'Contact us',
     'form': 'Contact form',
     'name': 'Full name',
@@ -119,9 +118,9 @@ const strings = {
     "thanks": 'Thanks for subscribing to our waiting list! '
   },
   'fr': {
-    'title': 'Contactez-nous, Gesmax By Bogital',
-    'desc': 'Contactez-nous, Gesmax By Bogital',
-    'subtitle': '',
+    'title': 'Contact',
+    'desc': 'Contactez-nous, Besoin d\'aide ou d\'informations? Contactez notre équipe dès aujourd\'hui.',
+    'subtitle': 'Besoin d\'aide ou d\'informations? Contactez notre équipe dès aujourd\'hui.',
     'contact': 'Contactez-nous',
     'form': 'Formulaire de contact',
     'name': 'Nom complet',

@@ -30,6 +30,9 @@ a {
   .button-primary {
     @apply mt-8 px-10 py-3 text-center flex justify-center rounded-lg relative font-medium bg-primary hover:bg-blue-800 active:bg-primary text-white;
   }
+  .bg-gradient-primary {
+    @apply bg-gradient-to-bl from-blue-800 to-gray-800;
+  }
 }
 
 
