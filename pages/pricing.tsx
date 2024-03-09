@@ -16,18 +16,20 @@ const Pricing: NextPage<Props> = ({ data }) => {
 
   return (
     <Layout locale={locale as string} title={strings.title} desc={strings.desc}>
-      <Header locale={locale as string} title={strings.headerTitle} subtitle={strings.headerSubtitle} active='pricing' image={{ src: "/images/prices.png", alt: "" }} />
+      <Header locale={locale as string} title={strings.headerTitle} subtitle={strings.headerSubtitle} active='pricing' />
       <PricingComponent strings={{
         ...strings.free,
         planLabels: strings.planLabels,
         usersLabel: strings.usersLabel,
         free30: strings.free30,
+        free6Months: strings.free6Months,
       }} />
       <PricingComponent strings={{
         ...strings.pro,
         planLabels: strings.planLabels,
         usersLabel: strings.usersLabel,
         free30: strings.free30,
+        free6Months: strings.free6Months,
       }} />
     </Layout>
   )
@@ -43,6 +45,7 @@ const useStrings = (isFr: boolean) => {
         'headerSubtitle': 'Find the right plan with pricing that scales with your team',
         'usersLabel': 'Users',
         'free30': '30 days free',
+        free6Months: '6 months free',
         'pro': {
           'title': 'Pro',
           'description': 'Unlock unlimited features and support for growing teams.',
@@ -52,7 +55,11 @@ const useStrings = (isFr: boolean) => {
             'Lifetime data retention',
             'Unlimited invoicing',
             'Priority support via email, phone, and chat'
-          ]
+          ],
+          labels: {
+            users: 'Users',
+            vat: 'excl. VAT'
+          }
         },
         'free': {
           'title': 'Free',
@@ -79,16 +86,21 @@ const useStrings = (isFr: boolean) => {
         'headerSubtitle': 'Trouvez le tarif adapté à l\'échelle de votre équipe.',
         'usersLabel': 'Utilisateurs',
         'free30': '30 jours gratuits',
+        free6Months: '6 mois gratuits',
         'pro': {
           'title': 'Pro',
-          'description': 'Débloquez des fonctionnalités illimitées et un support pour les équipes en croissance.',
+          'description': 'Débloquez des fonctionnalités et un support illimitées pour vos équipes en croissance.',
           'buttonText': 'Ajouter Gesmax',
           'items': [
             'Utilisateurs illimités',
             'Retention des données à vie',
             'Facturation illimitée',
             'Support prioritaire via e-mail, téléphone et chat'
-          ]
+          ],
+          labels: {
+            users: 'Utilisateurs',
+            vat: 'Hors TVA'
+          }
         },
         'free': {
           'title': 'Gratuit',

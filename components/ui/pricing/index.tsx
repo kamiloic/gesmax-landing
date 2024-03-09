@@ -12,12 +12,17 @@ interface PricingProps {
 		description: string;
 		usersLabel: string;
 		free30: string;
+		free6Months: string;
 		buttonText: string;
 		items: string[];
 		planLabels: {
 			monthly: string;
 			yearly: string;
 			threeYears: string;
+		}
+		labels?: {
+			users: string;
+			vat: string;
 		}
 	};
 }
@@ -56,10 +61,13 @@ const ListItem: React.FC<ListItemProps> = ({ label, pro = false }) => {
 
 interface PricingSliderProps {
 	selectedPlan: 'monthly' | 'yearly' | 'threeYears';
-	usersLabel: string;
+	labels: {
+		users: string
+		vat: string
+	}
 }
 
-const PricingSlider: React.FC<PricingSliderProps> = ({ selectedPlan, usersLabel }) => {
+const PricingSlider: React.FC<PricingSliderProps> = ({ selectedPlan, labels }) => {
 	const [users, setUsers] = useState(3);
 
 	const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,26 +75,24 @@ const PricingSlider: React.FC<PricingSliderProps> = ({ selectedPlan, usersLabel 
 		setUsers(newUserCount);
 	};
 
-	const price = useMemo(() => {
-		const newPrice = (() => {
-			if (selectedPlan === 'monthly')
-				return 25 + (users - 3) * 10;
-			if (selectedPlan === 'yearly')
-				return (25 + (users - 3) * 10) * 11;
-			if (selectedPlan === 'threeYears')
-				return (25 + (users - 3) * 10) * 30;
-			return 0;
-		})();
-		return newPrice;
-	}, [selectedPlan, users]);
+	const price = (() => {
+		if (selectedPlan === 'monthly')
+			return 25 + (users - 3) * 10;
+		if (selectedPlan === 'yearly')
+			return (25 + (users - 3) * 10) * 11;
+		if (selectedPlan === 'threeYears')
+			return (25 + (users - 3) * 10) * 30;
+		return 0;
+	})();
 
 	return (
 		<div className="flex flex-col items-center justify-center py-8">
-			<div className="flex w-full justify-between">
-				<div className="text-3xl font-bold mb-4">
-					{users} {usersLabel}
+			<div className="flex w-full justify-between items-center mb-4">
+				<div className="text-3xl font-bold">
+					{users} {labels.users}
 				</div>
-				<div className="text-lg font-semibold mt-4">
+				<div className="text-lg font-semibold">
+					<p className='text-base text-gray-400'>{labels.vat}</p>
 					<CurrencyFormat amount={price} />
 				</div>
 			</div>
@@ -94,12 +100,15 @@ const PricingSlider: React.FC<PricingSliderProps> = ({ selectedPlan, usersLabel 
 				<input
 					type="range"
 					min="3"
-					max="200"
+					max="50"
 					value={users}
 					onChange={handleSliderChange}
-					className="absolute top-0 left-0 w-full rounded h-8 bg-gray-200 appearance-none cursor-pointer"
+					className={clsx(
+						"absolute top-0 left-0 w-full rounded h-4 bg-gray-200 appearance-none cursor-pointer",
+						" cursor-ew-resize slider"
+					)}
 				/>
-				<div className="absolute top-0 left-0 h-8 bg-blue-500" style={{ width: `${((users - 3) / (200 - 3)) * 100}%` }}></div>
+				<div className="absolute top-0 left-0 h-4 bg-blue-500" style={{ width: `${((users - 3) / (50 - 3)) * 95}%` }}></div>
 			</div>
 		</div>
 	);
@@ -117,10 +126,10 @@ const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 
 	return (
 		<div className={clsx(
-			"w-full transform",
-			isPro && "bg-gradient-to-bl from-blue-800 to-gray-800 py-8 text-white"
+			"w-full transform py-16",
+			isPro && "bg-gradient-to-bl from-blue-800 to-gray-800 text-white"
 		)}>
-			<div className="md:flex max-w-5xl py-8 mx-auto">
+			<div className="md:flex max-w-5xl mx-auto">
 				<div>
 					<span style={{ boxSizing: 'border-box', display: 'inline-block', overflow: 'hidden', width: 'initial', height: 'initial', background: 'none', opacity: 1, border: '0px', margin: '0px', padding: '0px', position: 'relative', maxWidth: '100%' }}>
 						<span style={{ boxSizing: 'border-box', display: 'block', width: 'initial', height: 'initial', background: 'none', opacity: 1, border: '0px', margin: '0px', padding: '0px', maxWidth: '100%' }}>
@@ -151,7 +160,7 @@ const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 											<button
 												onClick={() => handleTabChange('monthly')}
 												className={clsx(
-													"text-sm py-1 relative px-4 focus:outline-none ring-blue-800 ring-opacity-30 rounded-full font-semibold focus:ring-4 bg-transparent",
+													"text-sm py-1 relative px-4 focus:outline-none rounded-full font-semibold",
 													selectedPlan === 'monthly' ? "text-gray-800" : "text-gray-400"
 												)}
 											>
@@ -160,7 +169,7 @@ const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 											<button
 												onClick={() => handleTabChange('yearly')}
 												className={clsx(
-													"text-sm py-1 relative px-4 focus:outline-none ring-blue-800 ring-opacity-30 rounded-full font-semibold focus:ring-4 bg-transparent",
+													"text-sm py-1 relative px-4 focus:outline-none rounded-full font-semibold",
 													selectedPlan === 'yearly' ? "text-gray-800" : "text-gray-400"
 												)}
 											>
@@ -169,7 +178,7 @@ const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 											<button
 												onClick={() => handleTabChange('threeYears')}
 												className={clsx(
-													"text-sm py-1 relative px-4 focus:outline-none ring-blue-800 ring-opacity-30 rounded-full font-semibold focus:ring-4 bg-transparent",
+													"text-sm py-1 relative px-4 focus:outline-none rounded-full font-semibold",
 													selectedPlan === 'threeYears' ? "text-gray-800" : "text-gray-400"
 												)}
 											>
@@ -177,15 +186,23 @@ const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 											</button>
 										</div>
 									</div>
-									<div className="relative grid w-full grid-cols-2 my-1 md:order-10">
-										<div className="text-center col-start-2 text-sm font-semibold whitespace-nowrap opacity-40">{strings.free30}</div>
+									<div className="relative grid w-full grid-cols-3 my-1 md:order-10">
+										{
+											selectedPlan == "yearly" &&
+											<div className="text-center col-start-2 text-sm font-semibold whitespace-nowrap opacity-40">{strings.free30}</div>
+										}
+										{
+											selectedPlan == "threeYears" &&
+											<div className="text-center col-start-3 text-sm font-semibold whitespace-nowrap opacity-40">{strings.free6Months}</div>
+										}
 									</div>
 								</div>
 							)
 						}
 					</div>
 					{
-						isPro && <PricingSlider usersLabel={strings.usersLabel} selectedPlan={selectedPlan} />
+						// @ts-ignore
+						isPro && <PricingSlider labels={strings.labels} selectedPlan={selectedPlan} />
 					}
 					<div className="grid w-full gap-4 mt-2 text-gray-800 md:grid-cols-2">
 						{
