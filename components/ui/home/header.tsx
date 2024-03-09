@@ -49,7 +49,7 @@ const useStrings = (locale: string) => {
     const isFr = locale.toLowerCase().includes('fr');
     return {
         en: {
-            title: "A <span style='color:#3b82f6'>Magical</span> new way of managing your business",
+            title: "A <span style='color:#3b82f6'>Magical</span> way of managing your business",
             subtitle: "For seamless business management anytime, anywhere: Gesmax is accessible on all major platforms – including PC, Android, iOS, and web – ensuring convenience and flexibility for your workflow.",
             demo: "Request a demo",
             seePricing: "See pricing"

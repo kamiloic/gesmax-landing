@@ -107,7 +107,7 @@ const strings = {
   'en': {
     'title': 'Contact',
     'desc': 'Contact, Gesmax By Bogital',
-    'subtitle': 'Reach Out to Us',
+    'subtitle': 'Need help or information? Contact our team today.',
     'contact': 'Contact us',
     'form': 'Contact form',
     'name': 'Full name',
