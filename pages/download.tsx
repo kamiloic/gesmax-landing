@@ -16,7 +16,7 @@ const Download: NextPage<Props> = ({ data }) => {
 
 	return (
 		<Layout locale={locale as string} title={strings.title} desc={strings.desc}>
-			<Header locale={locale as string} title={strings.headerTitle} subtitle={strings.headerSubtitle} active='download' image={{ src: "/images/download.png", alt: "" }} />
+			<Header locale={locale as string} title={strings.headerTitle} subtitle={strings.headerSubtitle} active='download' />
 			<DownloadComponent locale={locale} />
 		</Layout>
 	)

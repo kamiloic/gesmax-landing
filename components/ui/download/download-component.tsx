@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
-import { TitleSubTitle } from '../title-subtitle';
 
 const SVGTickGray = () => (
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="flex-shrink-0 w-6 h-6">
@@ -14,20 +13,15 @@ interface Props {
 
 const DownloadComponent: NextPage<Props> = ({ locale }) => {
 	const s = strings[(locale || '').toLowerCase().includes('fr') ? 'fr' : 'en'];
-
 	return (
-		<section className="py-20 bg-gradient-to-r from-primary via-blue-800 to-blue-900 text-gray-100">
+		<section className="py-8 bg-gradient-to-bl from-blue-800 to-gray-800 text-gray-100">
 			<div className="container max-w-7xl px-4 mx-auto">
-				<TitleSubTitle title={s.download} subtitle={s.downloadText} />
 				<div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 					{s.downloadLinks.map((link, index) => (
-						<div className="flex w-full mb-8 sm:px-4 md:w-full lg:mb-0" key={index}>
+						<div className="flex flex-col space-y-4 w-full mb-8 sm:px-4 md:w-full lg:mb-0" key={index}>
 							<div className="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-gray-900">
 								<div className="space-y-2">
 									<h4 className="text-2xl font-bold">{link.title}</h4>
-									<Link href={link.url}>
-										<a className="text-4xl font-bold text-primary">{link?.actionButton || s.downloadButton}</a>
-									</Link>
 								</div>
 								<ul className="flex-1 mb-6 text-gray-400">
 									{link.features.map((feature, index) => (
@@ -37,6 +31,11 @@ const DownloadComponent: NextPage<Props> = ({ locale }) => {
 										</li>
 									))}
 								</ul>
+								<div>
+									<Link href={link.url}>
+										<a className="button-primary">{link?.actionButton || s.downloadButton}</a>
+									</Link>
+								</div>
 							</div>
 						</div>
 					))}
