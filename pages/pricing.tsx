@@ -49,7 +49,7 @@ const useStrings = (isFr: boolean) => {
         'pro': {
           'title': 'Pro',
           'description': 'Unlock unlimited features and support for growing teams.',
-          'buttonText': 'Add Gesmax',
+          'buttonText': 'Purchase Gesmax',
           'items': [
             'Unlimited users',
             'Lifetime data retention',
@@ -58,13 +58,14 @@ const useStrings = (isFr: boolean) => {
           ],
           labels: {
             users: 'Users',
-            vat: 'excl. VAT'
+            vat: 'excl. VAT',
+            contact: 'Contact Us'
           }
         },
         'free': {
           'title': 'Free',
           'description': 'Suited for small businesses and freelancers. Always free.',
-          'buttonText': 'Add Gesmax for free',
+          'buttonText': 'Use Gesmax for free',
           'items': [
             'Up to 3 users',
             '3 months data retention',
@@ -90,7 +91,7 @@ const useStrings = (isFr: boolean) => {
         'pro': {
           'title': 'Pro',
           'description': 'Débloquez des fonctionnalités et un support illimitées pour vos équipes en croissance.',
-          'buttonText': 'Ajouter Gesmax',
+          'buttonText': 'Achetez votre license Gesmax',
           'items': [
             'Utilisateurs illimités',
             'Retention des données à vie',
@@ -99,13 +100,14 @@ const useStrings = (isFr: boolean) => {
           ],
           labels: {
             users: 'Utilisateurs',
-            vat: 'Hors TVA'
+            vat: 'Hors TVA',
+            contact: 'Contactez-nous'
           }
         },
         'free': {
           'title': 'Gratuit',
           'description': 'Adapté aux petites entreprises et aux freelancers. Toujours gratuit.',
-          'buttonText': 'Ajouter Gesmax gratuitement',
+          'buttonText': 'Utilisez Gesmax gratuitement',
           'items': [
             'Jusqu\'à 3 utilisateurs',
             'Retention des données pendant 3 mois',

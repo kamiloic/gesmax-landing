@@ -130,13 +130,13 @@ const strings = {
     'fr': {
         'title': [
             "Outils de Gestion d'Entreprise",
-            "Optimisation des Ventes et des Opérations",
+            "Gestion Commercial et Optimisation des Opérations",
             "Collaboration d'Équipe et Gestion Financière"
         ],
         'subtitle':
             [
-                "Exploitez pleinement votre potentiel avec les outils de gestion d'entreprise essentiels de Gesmax",
-                "Optimisez vos performances grâce à l'efficacité des ventes et des opérations de Gesmax",
+                "Exploitez pleinement votre potentiel avec les outils de gestion d'entreprise offerts Gesmax",
+                "Optimisez vos performances grâce à l'efficacité de la gestion commerciale avec Gesmax",
                 "Cultivez la collaboration et maîtrisez vos finances avec les solutions de gestion d'équipe de Gesmax"
             ],
         "features": [
@@ -152,7 +152,7 @@ const strings = {
             },
             {
                 "title": "Informations",
-                "subtitle": "Découvrez les faiblesses et les risques commerciaux pour une amélioration stratégique",
+                "subtitle": "Vous prenez des decisions stratégique basés sur des informations précise",
                 "desc": "Les informations Gesmax révèlent des aspects critiques de la santé de l'entreprise, des sources de ventes, des dépenses et des pertes potentielles, mettant en évidence les domaines à améliorer et l'atténuation des risques."
             },
             {
