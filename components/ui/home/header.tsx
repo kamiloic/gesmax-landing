@@ -24,12 +24,12 @@ const HomeHeader: React.FC<Props> = ({ active, locale }) => {
                         <p className="mt-6 mb-8 text-lg sm:mb-12">{strings.subtitle}</p>
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
                             <button onClick={() => window.open("https://gesmaxapp.vercel.app", "_blank")}>
-                                <span className="px-8 py-3 text-lg font-semibold rounded bg-primary text-white cursor-pointer">
+                                <span className="button-primary mt-0 cursor-pointer">
                                     {strings.demo}
                                 </span>
                             </button>
                             <Link href='/pricing'>
-                                <span className="px-8 py-3 text-lg font-semibold text-primary cursor-pointer">
+                                <span className="button-primary mt-0 bg-white hover:bg-transparent hover:text-blue-800 text-primary cursor-pointer">
                                     {strings.seePricing}
                                 </span>
                             </Link>

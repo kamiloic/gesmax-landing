@@ -88,16 +88,17 @@ const GrowthInsights: React.FC<Props> = ({ locale }) => {
 
                         <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
                             <button onClick={() => window.open("https://gesmaxapp.vercel.app", "_blank")}>
-                                <span className="px-8 py-3 text-lg font-semibold rounded bg-primary text-white cursor-pointer">
+                                <span className="button-primary mt-0 cursor-pointer">
                                     {s.demo}
                                 </span>
                             </button>
                             <Link href='/pricing'>
-                                <span className="px-8 py-3 text-lg font-semibold text-primary cursor-pointer">
+                                <span className="button-primary mt-0 bg-white hover:bg-transparent hover:text-blue-800 text-primary cursor-pointer">
                                     {s.seePricing}
                                 </span>
                             </Link>
                         </div>
+
                     </div>
                     <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
                         {

@@ -1,10 +1,11 @@
 
 
 import clsx from 'clsx';
-import React, { useMemo, useState } from 'react';
-import CurrencyFormat from '../currency-format';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { Tick } from '../icons/tick';
+import { QuestionMark } from '../icons/question-mark';
+import { PricingSlider } from './pricing-slider';
 
 interface PricingProps {
 	strings: {
@@ -23,6 +24,7 @@ interface PricingProps {
 		labels?: {
 			users: string;
 			vat: string;
+			contact: string
 		}
 	};
 }
@@ -31,12 +33,6 @@ interface ListItemProps {
 	label: string;
 	pro?: boolean
 }
-
-const QuestionMark = () => (
-	<svg width="21" height="22" viewBox="0 0 21 22" fill="none" className="text-gray-400">
-		<path fillRule="evenodd" clipRule="evenodd" d="M10.5 21.5C16.299 21.5 21 16.799 21 11S16.299.5 10.5.5 0 5.201 0 11s4.701 10.5 10.5 10.5zm.896-8.085H9.502v-.148c.012-2.045.591-2.676 1.597-3.301.688-.432 1.216-.977 1.216-1.773 0-.892-.699-1.471-1.568-1.471-.801 0-1.574.511-1.625 1.58H7.1c.057-2.16 1.67-3.262 3.66-3.262 2.17 0 3.664 1.204 3.664 3.125 0 1.3-.653 2.153-1.699 2.778-.926.568-1.318 1.12-1.33 2.324v.148zm.352 2.295a1.265 1.265 0 01-1.25 1.25 1.243 1.243 0 01-1.25-1.25 1.24 1.24 0 011.25-1.238c.67 0 1.244.556 1.25 1.238z" fill="currentColor"></path>
-	</svg>
-)
 
 const ListItem: React.FC<ListItemProps> = ({ label, pro = false }) => {
 	return (
@@ -59,64 +55,17 @@ const ListItem: React.FC<ListItemProps> = ({ label, pro = false }) => {
 };
 
 
-interface PricingSliderProps {
-	selectedPlan: 'monthly' | 'yearly' | 'threeYears';
-	labels: {
-		users: string
-		vat: string
-	}
-}
-
-const PricingSlider: React.FC<PricingSliderProps> = ({ selectedPlan, labels }) => {
-	const [users, setUsers] = useState(3);
-
-	const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const newUserCount = parseInt(event.target.value);
-		setUsers(newUserCount);
-	};
-
-	const price = (() => {
-		if (selectedPlan === 'monthly')
-			return 25 + (users - 3) * 10;
-		if (selectedPlan === 'yearly')
-			return (25 + (users - 3) * 10) * 11;
-		if (selectedPlan === 'threeYears')
-			return (25 + (users - 3) * 10) * 30;
-		return 0;
-	})();
-
-	return (
-		<div className="flex flex-col items-center justify-center py-8">
-			<div className="flex w-full justify-between items-center mb-4">
-				<div className="text-3xl font-bold">
-					{users} {labels.users}
-				</div>
-				<div className="text-lg font-semibold">
-					<p className='text-base text-gray-400'>{labels.vat}</p>
-					<CurrencyFormat amount={price} />
-				</div>
-			</div>
-			<div className="relative w-full">
-				<input
-					type="range"
-					min="3"
-					max="50"
-					value={users}
-					onChange={handleSliderChange}
-					className={clsx(
-						"absolute top-0 left-0 w-full rounded h-4 bg-gray-200 appearance-none cursor-pointer",
-						" cursor-ew-resize slider"
-					)}
-				/>
-				<div className="absolute top-0 left-0 h-4 bg-blue-500" style={{ width: `${((users - 3) / (50 - 3)) * 95}%` }}></div>
-			</div>
-		</div>
-	);
-};
-
-
 const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 	const [selectedPlan, setSelectedPlan] = useState<'monthly' | 'yearly' | 'threeYears'>('monthly');
+	const [hideButton, setHideButton] = useState(false)
+
+	const onUserValue = (value: number) => {
+		if (value > 50) {
+			setHideButton(true)
+			return;
+		}
+		setHideButton(false)
+	}
 
 	const handleTabChange = (tab: 'monthly' | 'yearly' | 'threeYears') => {
 		setSelectedPlan(tab);
@@ -202,7 +151,7 @@ const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 					</div>
 					{
 						// @ts-ignore
-						isPro && <PricingSlider labels={strings.labels} selectedPlan={selectedPlan} />
+						isPro && <PricingSlider onValue={onUserValue} labels={strings.labels} selectedPlan={selectedPlan} />
 					}
 					<div className="grid w-full gap-4 mt-2 text-gray-800 md:grid-cols-2">
 						{
@@ -211,11 +160,21 @@ const PricingComponent: React.FC<PricingProps> = ({ strings }) => {
 							))
 						}
 					</div>
-					<div className="flex justify-end mt-2">
-						<Link className="inline-block" tabIndex={-1} href="/contact">
-							<button className="mt-8 px-10 py-3 text-center flex justify-center rounded-lg relative font-medium custom-focus  bg-primary hover:bg-blue-800 active:bg-primary text-white">{strings.buttonText}</button>
-						</Link>
-					</div>
+
+					{
+						hideButton ?
+							<div className="flex justify-end mt-2">
+								<a className="inline-block" tabIndex={-1} href="mailto:gesmax@bogital.com">
+									<button className="button-primary bg-gray-400">{"gesmax@bogital.com"}</button>
+								</a>
+							</div> :
+							<div className="flex justify-end mt-2">
+								<Link className="inline-block" tabIndex={-1} href="/contact">
+									<button className="button-primary">{strings.buttonText}</button>
+								</Link>
+							</div>
+					}
+
 				</div>
 			</div>
 		</div>
