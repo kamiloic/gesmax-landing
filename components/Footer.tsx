@@ -64,6 +64,10 @@ const useStrings = (isFr: boolean) => {
                         path: "/pricing"
                     },
                     {
+                        name: "Download",
+                        path: "/download"
+                    },
+                    {
                         name: "Contact",
                         path: "/contact"
                     }
@@ -77,6 +81,10 @@ const useStrings = (isFr: boolean) => {
                     {
                         name: "Coûts",
                         path: "/pricing"
+                    },
+                    {
+                        name: "Télécharger",
+                        path: "/download"
                     },
                     {
                         name: "Contact",
