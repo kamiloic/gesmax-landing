@@ -59,7 +59,7 @@ const Testimonials: React.FC<Props> = ({ locale }) => {
 const strings = {
     'en': {
         'title': 'Testimonials',
-        'subtitle': 'A non-exhaustive list of Gesmax Testimonials',
+        'subtitle': 'What Our Customers Say',
         'list': [
             {
                 desc: "Gesmax has revolutionized our inventory management! With its intuitive interface and real-time sync, we can now keep track of our extensive book collection effortlessly.",

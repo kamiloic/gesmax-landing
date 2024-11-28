@@ -67,27 +67,27 @@ const strings = {
         "features": [
             {
                 "title": "Efficiency and Analytics",
-                "subtitle": "Streamline Processes and Gain Insight with Advanced Analytics",
+                "subtitle": "Streamline Your Business Processes and Make Informed Decisions",
                 "desc": "Gesmax streamlines your business processes, saving time and resources, while maximizing productivity and profitability. Gain detailed analytics to track sales, expenses, and losses, empowering informed decision-making for business growth."
             },
             {
                 "title": "Ensure Business Continuity",
-                "subtitle": "Safeguard Your Business Data and Ensure Uninterrupted Operations",
+                "subtitle": "Your Business, Always On – Even Offline",
                 "desc": "Gesmax's robust disaster recovery and offline functionality ensure uninterrupted operations, safeguarding your business data and minimizing downtime risks. Rest assured knowing your data is securely backed up and easily recoverable in emergencies."
             },
             {
                 "title": "Insights",
-                "subtitle": "Uncover Business Weaknesses and Risks for Strategic Improvement",
+                "subtitle": "Discover Critical Business Insights for Strategic Growth",
                 "desc": "Gesmax Insights reveal critical aspects of business health, sales sources, expenses, and potential losses, highlighting areas for improvement and risk mitigation."
             },
             {
                 "title": "Notifications",
-                "subtitle": "Stay Informed with Real-time Event Alerts and Updates",
+                "subtitle": "Real-time Alerts Keep You Informed and In Control",
                 "desc": "Gesmax notifies you of significant events, including inventory updates, sales transactions, expense approvals, and team assessments, ensuring you're always up-to-date."
             },
             {
                 "title": "Invoicing and Ticketing System",
-                "subtitle": "Streamline Sales Transactions and Documentation Effortlessly",
+                "subtitle": "Generate invoices in seconds and maintain seamless records for every transaction.",
                 "desc": "Gesmax's Invoicing and Ticketing System simplifies sales processes, enabling seamless transactions, receipt printing, and efficient record-keeping."
             },
             {
@@ -102,43 +102,42 @@ const strings = {
             },
             {
                 "title": "Offline Functionality",
-                "subtitle": "Work Without Interruption, Anytime, Anywhere",
+                "subtitle": "Keep Working Without Interruptions – Even Without Internet",
                 "desc": "Gesmax operates seamlessly offline, allowing you to continue working uninterrupted. Upon reconnecting, data syncs automatically, ensuring continuity of operations."
             },
             {
                 "title": "Team Management and Assessment",
-                "subtitle": "Empower Your Team and Enhance Performance",
+                "subtitle": "Empower Your Team for Success with Streamlined Management Tools",
                 "desc": "Gesmax facilitates efficient team management and performance assessment, fostering collaboration, productivity, and growth within your organization."
             },
             {
                 "title": "Supply and Expense Management",
-                "subtitle": "Optimize Resource Allocation for Sustainable Growth",
+                "subtitle": "Stay on Top of Resources with Easy Supply and Expense Tracking",
                 "desc": "Gesmax simplifies supply and expense management, helping you track and control costs effectively to maximize profitability and sustainability."
             },
             {
                 "title": "Inventory Management",
-                "subtitle": "Maintain Control and Visibility Over Your Stock",
+                "subtitle": "Gain Complete Control and Visibility Over Your Stock",
                 "desc": "Gesmax's Inventory Management feature enables you to track stock levels, monitor movements, and optimize inventory processes for enhanced efficiency and profitability."
             },
             {
                 "title": "Customizable Reporting and Accounting",
-                "subtitle": "Tailor Reports to Drive Strategic Decision-making",
+                "subtitle": "Tailored Reports for Better Decision-Making",
                 "desc": "Gesmax offers customizable reporting and accounting options, allowing you to generate detailed reports tailored to your specific business requirements, facilitating strategic decision-making."
             }
         ]
     },
-    'fr': {
-        'title': [
+    "fr": {
+        "title": [
             "Outils de Gestion d'Entreprise",
-            "Gestion Commercial et Optimisation des Opérations",
+            "Gestion Commerciale et Optimisation des Opérations",
             "Collaboration d'Équipe et Gestion Financière"
         ],
-        'subtitle':
-            [
-                "Exploitez pleinement votre potentiel avec les outils de gestion d'entreprise offerts Gesmax",
-                "Optimisez vos performances grâce à l'efficacité de la gestion commerciale avec Gesmax",
-                "Cultivez la collaboration et maîtrisez vos finances avec les solutions de gestion d'équipe de Gesmax"
-            ],
+        "subtitle": [
+            "Exploitez pleinement votre potentiel avec les outils de gestion d'entreprise offerts par Gesmax",
+            "Optimisez vos performances grâce à l'efficacité de la gestion commerciale avec Gesmax",
+            "Cultivez la collaboration et maîtrisez vos finances avec les solutions de gestion d'équipe de Gesmax"
+        ],
         "features": [
             {
                 "title": "Efficacité et Analytique",
@@ -148,11 +147,11 @@ const strings = {
             {
                 "title": "Assurer la Continuité des Affaires",
                 "subtitle": "Protégez vos données d'entreprise et assurez des opérations ininterrompues",
-                "desc": "La récupération après sinistre robuste et la fonctionnalité hors ligne de Gesmax garantissent des opérations ininterrompues, protégeant vos données d'entreprise et minimisant les risques d'arrêt. Soyez assuré de savoir que vos données sont sauvegardées en toute sécurité et facilement récupérables en cas d'urgence."
+                "desc": "La récupération après sinistre robuste et la fonctionnalité hors ligne de Gesmax garantissent des opérations ininterrompues, protégeant vos données d'entreprise et minimisant les risques d'arrêt. Soyez assuré que vos données sont sauvegardées en toute sécurité et facilement récupérables en cas d'urgence."
             },
             {
                 "title": "Informations",
-                "subtitle": "Vous prenez des decisions stratégique basés sur des informations précise",
+                "subtitle": "Découvrez des informations critiques pour une croissance stratégique",
                 "desc": "Les informations Gesmax révèlent des aspects critiques de la santé de l'entreprise, des sources de ventes, des dépenses et des pertes potentielles, mettant en évidence les domaines à améliorer et l'atténuation des risques."
             },
             {
@@ -162,7 +161,7 @@ const strings = {
             },
             {
                 "title": "Système de Facturation et de Billetterie",
-                "subtitle": "Simplifiez les transactions de vente et la documentation sans effort",
+                "subtitle": "Générez des factures en quelques secondes et maintenez des enregistrements sans faille pour chaque transaction.",
                 "desc": "Le système de facturation et de billetterie de Gesmax simplifie les processus de vente, permettant des transactions sans heurt, l'impression de reçus et une gestion efficace des dossiers."
             },
             {
@@ -173,11 +172,11 @@ const strings = {
             {
                 "title": "Stimuler la Croissance et l'Innovation",
                 "subtitle": "Élargissez vos horizons avec des solutions de commerce électronique évolutives",
-                "desc": "Avec les fonctionnalités évolutives et personnalisables de Gesmax, débloquez de nouvelles opportunités de croissance, d'innovation et de succès dans votre industrie. Bénéficiez de solutions de commerce électronique faciles à utiliser et adaptées à vos besoins commerciaux."
+                "desc": "Avec les fonctionnalités évolutives et personnalisables de Gesmax, débloquez de nouvelles opportunités de croissance, d'innovation et de succès dans votre secteur. Bénéficiez de solutions de commerce électronique faciles à utiliser et adaptées à vos besoins commerciaux."
             },
             {
                 "title": "Fonctionnalité Hors Ligne",
-                "subtitle": "Travaillez sans interruption, n'importe où, n'importe quand",
+                "subtitle": "Travaillez sans interruption, même sans Internet",
                 "desc": "Gesmax fonctionne sans interruption hors ligne, vous permettant de continuer à travailler sans interruption. Lors de la reconnexion, les données se synchronisent automatiquement, assurant la continuité des opérations."
             },
             {
