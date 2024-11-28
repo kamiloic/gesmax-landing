@@ -35,8 +35,8 @@ const HomeHeader: React.FC<Props> = ({ active, locale }) => {
                             </Link>
                         </div>
                     </div>
-                    <div className="flex flex-1 items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-                        <img src="/images/presentation_image.png" alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
+                    <div className="flex flex-1 items-center justify-center p-6 mt-8 lg:mt-0 h-60 sm:h-80 lg:h-96 xl:h-96 2xl:h-96">
+                        <img src="/images/presentation_image.png" alt="" className="object-contain h-60 sm:h-80 lg:h-96 xl:h-96 2xl:h-96" />
                     </div>
                 </div>
             </section>
@@ -49,9 +49,9 @@ const useStrings = (locale: string) => {
     const isFr = locale.toLowerCase().includes('fr');
     return {
         en: {
-            title: "A <span style='color:#3b82f6'>Magical</span> way of managing your business",
-            subtitle: "For seamless business management anytime, anywhere: Gesmax is accessible on all major platforms – including PC, Android, iOS, and web – ensuring convenience and flexibility for your workflow.",
-            demo: "Request a demo",
+            title: "Effortless Business <span style='color:#3b82f6'>Management</span>, Anytime, Anywhere.",
+            subtitle: "Manage your business operations with ease, whether in the office, on the go, or from the comfort of your home.",
+            demo: "Start Your Free Trial",
             seePricing: "See pricing"
         },
         fr: {

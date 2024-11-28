@@ -28,8 +28,8 @@ export const Navigation: React.FC<Props> = ({ active, locale }) => {
 				<div className="flex justify-between h-16 ">
 					<Link href="/" aria-label={strings.backToHomepage} className="flex items-center p-2">
 						<div className="flex items-center cursor-pointer z-50">
-							<div className="h-16 w-auto relative">
-								<img src="/images/logo-lg.png" alt={strings.logoAlt} className="object-contain h-16 sm:h-16 lg:h-16 xl:h-16 2xl:h-16" />
+							<div className="h-12 w-auto relative">
+								<img src="/images/logo-lg.png" alt={strings.logoAlt} className="object-contain h-8" />
 							</div>
 						</div>
 					</Link>
